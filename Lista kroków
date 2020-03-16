@@ -6,5 +6,8 @@ W:Czujnik2(zatrzymanie taśmy)
 W:Czujnik3(zamknięcie zatrzasków)
 4.Zezwolenie na pracę robotów
 W:Praca robotów
-5.Home robot 1 |||||| 5. Home robot 2
-W:
+5.Home robot 1 |||||| 5. Home robot 2 ---> dodatkowe sekwencje
+W: Zakończenie pracy robota 1 i 2 
+6. Sprawdzenie pozycji robota-->ewentualne czekanie na drugiego robota
+W: Dwa roboty zakończyły pracę
+7. 
