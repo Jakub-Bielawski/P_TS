@@ -1,1 +1,10 @@
-
+1.wjazd części w strefę roboczą
+W:Czujnik1(spowolnienie taśmy)
+2.Spowolnienie taśmy
+W:Czujnik2(zatrzymanie taśmy)
+3.Zatrzymanie taśmy i zamknięcie zatrzasków
+W:Czujnik3(zamknięcie zatrzasków)
+4.Zezwolenie na pracę robotów
+W:Praca robotów
+5.Home robot 1 |||||| 5. Home robot 2
+W:
