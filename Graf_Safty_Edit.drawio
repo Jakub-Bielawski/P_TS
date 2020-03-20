@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-03-20T12:42:18.262Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0" etag="GksZGo3Mfe6tsN3Hs70k" version="12.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-03-20T12:52:52.377Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0" etag="WnA74b464_xKztFrZhYU" version="12.8.8" type="github">
   <diagram name="Page-1" id="42789a77-a242-8287-6e28-9cd8cfd52e62">
     <mxGraphModel dx="2244" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -49,14 +49,14 @@
         <mxCell id="OLLGJLySp4nUVTmZsZ1r-8" value="&lt;span&gt;Home robot 2&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="567.5" y="440" width="92.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="OLLGJLySp4nUVTmZsZ1r-9" value="Zakończenie pracy robota 1" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" target="OLLGJLySp4nUVTmZsZ1r-15" edge="1">
+        <mxCell id="OLLGJLySp4nUVTmZsZ1r-9" value="S1 == Off" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" target="OLLGJLySp4nUVTmZsZ1r-15" edge="1">
           <mxGeometry x="-0.1094" y="5" relative="1" as="geometry">
             <mxPoint x="405" y="490" as="sourcePoint" />
             <mxPoint x="378.68578308764086" y="520.4982072800894" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OLLGJLySp4nUVTmZsZ1r-14" value="Zakończenie pracy robota 2" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.738;exitY=1.036;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="OLLGJLySp4nUVTmZsZ1r-8" target="OLLGJLySp4nUVTmZsZ1r-15" edge="1">
+        <mxCell id="OLLGJLySp4nUVTmZsZ1r-14" value="S2 == Off" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.738;exitY=1.036;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="OLLGJLySp4nUVTmZsZ1r-8" target="OLLGJLySp4nUVTmZsZ1r-15" edge="1">
           <mxGeometry x="-0.895" y="7" relative="1" as="geometry">
             <mxPoint x="675" y="490" as="sourcePoint" />
             <mxPoint as="offset" />
@@ -116,7 +116,7 @@
             <mxPoint x="310" y="420" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-32" value="S1_cycle==1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-2" vertex="1" connectable="0">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-32" value="L_cycle1==1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-2" vertex="1" connectable="0">
           <mxGeometry x="-0.1763" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -139,7 +139,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-6" value="&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;czekanie na drugiego &lt;br&gt;robota S2&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="FYHUPgaPEH7CVNJRQOQ_-5" vertex="1" connectable="0">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-6" value="&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;czekanie na drugiego &lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;robota S2&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;L2_cycle2 =1_&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="FYHUPgaPEH7CVNJRQOQ_-5" vertex="1" connectable="0">
           <mxGeometry x="-0.0417" y="-5" relative="1" as="geometry">
             <mxPoint x="24.999999999999993" y="0.02000000000000135" as="offset" />
           </mxGeometry>
@@ -150,7 +150,7 @@
             <mxPoint x="310" y="410" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-33" value="S1_cycle==0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-7" vertex="1" connectable="0">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-33" value="L_cycle2==0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-7" vertex="1" connectable="0">
           <mxGeometry x="-0.1295" y="5" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -166,16 +166,17 @@
             <mxPoint x="910.000000000001" y="415" as="sourcePoint" />
             <mxPoint x="910.000000000001" y="505" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="920" y="410" />
-              <mxPoint x="950" y="450" />
+              <mxPoint x="930" y="370" />
+              <mxPoint x="990" y="420" />
+              <mxPoint x="990" y="440" />
               <mxPoint x="970" y="510" />
               <mxPoint x="960" y="550" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-11" value="&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;czekanie na drugiego &lt;br&gt;robota S1&lt;br/&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="FYHUPgaPEH7CVNJRQOQ_-10" vertex="1" connectable="0">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-11" value="&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;czekanie na drugiego &lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;robota S1&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;amp;&amp;amp;&lt;/div&gt;&lt;div&gt;R1_cycle2 = 1&lt;br&gt;&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="FYHUPgaPEH7CVNJRQOQ_-10" vertex="1" connectable="0">
           <mxGeometry x="-0.0417" y="-5" relative="1" as="geometry">
-            <mxPoint x="-9.300000000000011" y="1.290000000000001" as="offset" />
+            <mxPoint x="14.289999999999988" y="7.070000000000001" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FYHUPgaPEH7CVNJRQOQ_-12" value="" style="endArrow=classic;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="OLLGJLySp4nUVTmZsZ1r-8" target="FYHUPgaPEH7CVNJRQOQ_-8" edge="1">
@@ -184,7 +185,7 @@
             <mxPoint x="669.9999999999989" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-34" value="S2_cycle==1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-12" vertex="1" connectable="0">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-34" value="R_cycle1 == 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-12" vertex="1" connectable="0">
           <mxGeometry x="0.2397" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -195,7 +196,7 @@
             <mxPoint x="720.0000000000014" y="415" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-35" value="S2_cycle==0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-13" vertex="1" connectable="0">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-35" value="R1_cycle2==0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="FYHUPgaPEH7CVNJRQOQ_-13" vertex="1" connectable="0">
           <mxGeometry x="-0.3623" y="-1" relative="1" as="geometry">
             <mxPoint x="1" as="offset" />
           </mxGeometry>
