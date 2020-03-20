@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-03-20T12:33:10.504Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0" etag="QIR0NQptfPEAVyhURKlc" version="12.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-03-20T12:37:57.066Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0" etag="-ZuatElfUhb4NRnSTGFx" version="12.8.8" type="github">
   <diagram name="Page-1" id="42789a77-a242-8287-6e28-9cd8cfd52e62">
     <mxGraphModel dx="2244" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -198,14 +198,11 @@
             <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-15" value="&lt;span&gt;Sprawdzenie stanów&amp;nbsp;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1200" y="425" width="92.5" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="FYHUPgaPEH7CVNJRQOQ_-22" value="&lt;span&gt;Praca układu&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="1200" y="120" width="92.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-23" value="Zatrzymanie lini" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1200" y="260" width="92.5" height="50" as="geometry" />
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-23" value="Zatrzymanie lini oraz robotów" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1191.25" y="260" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="FYHUPgaPEH7CVNJRQOQ_-24" value="" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-22" target="FYHUPgaPEH7CVNJRQOQ_-23" edge="1">
           <mxGeometry x="0.0002" relative="1" as="geometry">
@@ -219,39 +216,15 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-25" value="Zamknięcie obwodu safty" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-23" target="FYHUPgaPEH7CVNJRQOQ_-15" edge="1">
+        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-25" value="Zamknięcie obwodu safty" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-23" target="FYHUPgaPEH7CVNJRQOQ_-28" edge="1">
           <mxGeometry x="0.0002" relative="1" as="geometry">
             <mxPoint x="1310" y="310" as="sourcePoint" />
-            <mxPoint x="1310" y="400" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-27" value="Odpowiednie warunki spełnione" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-15" target="FYHUPgaPEH7CVNJRQOQ_-28" edge="1">
-          <mxGeometry x="0.0002" relative="1" as="geometry">
-            <mxPoint x="1380" y="560" as="sourcePoint" />
-            <mxPoint x="1246" y="580" as="targetPoint" />
+            <mxPoint x="1246.25" y="425" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FYHUPgaPEH7CVNJRQOQ_-28" value="&lt;span&gt;Powrót do wykonywanej sekwencji&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1200" y="560" width="92.5" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-29" value="" style="curved=1;endArrow=classic;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-15" target="FYHUPgaPEH7CVNJRQOQ_-15" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1369.9999999999989" y="412.5" as="sourcePoint" />
-            <mxPoint x="1487.5" y="557.5" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1360" y="400" />
-              <mxPoint x="1430" y="450" />
-              <mxPoint x="1417.5" y="477.5" />
-              <mxPoint x="1390" y="510" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-30" value="&lt;span style=&quot;color: rgb(36 , 41 , 46) ; font-family: &amp;#34;verdana&amp;#34; ; white-space: pre&quot;&gt;czekanie na zapalenie warunków&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="FYHUPgaPEH7CVNJRQOQ_-29" vertex="1" connectable="0">
-          <mxGeometry x="-0.0417" y="-5" relative="1" as="geometry">
-            <mxPoint x="-24.590000000000007" y="0.19000000000000128" as="offset" />
-          </mxGeometry>
+          <mxGeometry x="1200" y="410" width="92.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FYHUPgaPEH7CVNJRQOQ_-36" value="Przygotowanie&amp;nbsp;&lt;br&gt;do ponownego wykonania" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="100" y="420" width="110" height="60" as="geometry" />
@@ -327,6 +300,9 @@
         </mxCell>
         <mxCell id="w1gUlYuHQQZhndwBypMO-3" value="&lt;div&gt;Praca układu może zostać naruszona z każdego stanu,&lt;/div&gt;&lt;div&gt;nie jesteśmy pewni jak to zaznaczyć aby graf nie stracił na czytelności&lt;br&gt; &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="609" y="110" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="w1gUlYuHQQZhndwBypMO-4" value="&lt;div&gt;Stan powórt do wykonywanej sekwencji, aktywuje odpowiedni stan&lt;/div&gt;&lt;div&gt;na podstawie zmiennej mówiącej o tym na którym,&lt;/div&gt;&lt;div&gt; procesie zatrzymał się automa&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="210" width="420" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
