@@ -15,7 +15,6 @@ options_Robot1 = [
     {"name": "Sekwencja 1", "initial": False, "value": "1"},  # 1
     {"name": "Sekwencja 2", "initial": False, "value": "2"},  # 2
     {"name": "Srzygotowanie do ponownego wykonania", "initial": False, "value": "3"}  # 3
-
 ]
 
 options_Robot2 = [
