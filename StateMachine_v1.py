@@ -11,10 +11,10 @@ options = [
     {"name": "Wlaczenie tasmy", "initial": False, "value": "h"}]  # 6
 
 options_Robot1 = [
-    {"name": "Pozycja domowa", "initial": True, "value": "0"},  # 0
-    {"name": "Sekwencja 1", "initial": False, "value": "1"},  # 1
-    {"name": "Sekwencja 2", "initial": False, "value": "2"},  # 2
-    {"name": "Srzygotowanie do ponownego wykonania", "initial": False, "value": "3"}  # 3
+#    {"name": "Pozycja domowa", "initial": True, "value": "0"},  # 0
+#    {"name": "Sekwencja 1", "initial": False, "value": "1"},  # 1
+#    {"name": "Sekwencja 2", "initial": False, "value": "2"},  # 2
+#    {"name": "Srzygotowanie do ponownego wykonania", "initial": False, "value": "3"}  # 3
 ]
 
 options_Robot2 = [
