@@ -14,7 +14,6 @@ class Generator(StateMachine):
         self.transitions = []
         self.states_map = {}
         self.current_state = states[0]
-
         # create fields of states and transitions using setattr()
         # create lists of states and transitions
         # create states map - needed by StateMachine to map states and its values

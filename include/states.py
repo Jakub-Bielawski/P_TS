@@ -13,15 +13,15 @@ options = [
 
 options_RobotL = [
     {"name": "Pozycja domowa", "initial": True, "value": "L_cycle1==1"},  # 0
-    {"name": "Sekwencja 1", "initial": False, "value": "(L_cycle2&R_cycle)==1"},  # 1
+    {"name": "Sekwencja 1", "initial": False, "value": "(L_cycle2&R_cycle2)==1"},  # 1
     {"name": "Sekwencja 2", "initial": False, "value": "L_cycle2==0"},  # 2
-    {"name": "Srzygotowanie do ponownego wykonania", "initial": False, "value": "Flag_Restart == ON"}  # 3
+    {"name": "Przygotowanie do ponownego wykonania", "initial": False, "value": "Flag_Restart == ON"}  # 3
 
 ]
 
 options_RobotR = [
     {"name": "Pozycja domowa", "initial": True, "value": "R_cycle1==1"},  # 0
-    {"name": "Sekwencja 1", "initial": False, "value": "(L_cycle2&R_cycle)==1"},  # 1
+    {"name": "Sekwencja 1", "initial": False, "value": "(L_cycle2&R_cycle2)==1"},  # 1
     {"name": "Sekwencja 2", "initial": False, "value": "R_cycle2==0"},  # 2
     {"name": "Srzygotowanie do ponownego wykonania", "initial": False, "value": "Flag_Restart == ON"}  # 3
 ]
