@@ -1,0 +1,10 @@
+Ogólne założenia projektu:
+
+Rozbicie spawania na dwa procesy
+Mniej więcej 15 stanów
+2 raboty spawające
+Jeden robot z prawej drugi z lewej, karoseria porusza się na linii
+Można skorzystać z Blender do wizualizacji
+Dobrze było by ogarnąć z prawdziwego procesu
+Funkcja wyświetlająca stan początkowy, końcowy i scieżkę pomiędzy nimi zamiast analizy grafu
+Podzielenie na pliki, zwiększenie czytelności kodu

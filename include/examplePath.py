@@ -1,0 +1,12 @@
+path_main1 = ["m_0_1", "m_1_2", "m_2_3", "m_3_4", "m_4_4", "m_4_5", "m_5_6", "m_6_0"]
+path_main2 = ["m_0_1", "m_1_2", "m_2_3", "m_3_4", "m_4_5", "m_5_6", "m_6_0"]
+path_r1 = ["m_0_1", "m_1_2", "m_2_0"]
+path_r1p2 = ["m_0_1", "m_1_3", "m_3_0"]
+path_r1p3 = ["m_0_1", "m_1_2", "m_2_3", "m_3_0"]
+path_r2 = ["m_0_1", "m_1_2", "m_2_0"]
+path_r2p2 = ["m_0_1", "m_1_3", "m_3_0"]
+path_r2p3 = ["m_0_1", "m_1_2", "m_2_3", "m_3_0"]
+
+main_paths = [path_main1, path_main2]
+rL_paths = [path_r1, path_r1p2, path_r1p3]
+rR_paths = [path_r2, path_r2p2, path_r2p3]
