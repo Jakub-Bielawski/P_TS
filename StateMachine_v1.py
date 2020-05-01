@@ -1,23 +1,22 @@
 from statemachine import StateMachine
 import include
+import matplotlib
 
 for path in include.main_paths:
     # create a supervisor
     supervisor = include.Generator.create_master(include.master_states, include.master_transitions)
     robotL = include.Generator.create_master(include.robotL_states, include.robotL_transitions)
     robotR = include.Generator.create_master(include.robotR_states, include.robotR_transitions)
-    # print('\n' + str(supervisor))
-    # print('\n' + str(robotL))
-    # print('\n' + str(robotR))
+    print('\n' + str(supervisor))
+    print('\n' + str(robotL))
+    print('\n' + str(robotR))
 
     # run supervisor for exemplary path
     print("Executing path: {}".format(path))
     for event in path:
 
         # launch a transition in our supervisor
-        include.master_transitions[event]._run(supervisor)
-        # print(supervisor.current_state)
-        # print(supervisor.current_state.value)
+
         # add slave
         if supervisor.current_state.value == "(czujnik_1&czujnik_2)==0":
             # # TODO: automata 1 (for) slave1
@@ -57,44 +56,52 @@ for path in include.main_paths:
 
             for pathL, pathR in zip(include.rL_paths, include.rR_paths):
                 for eventL, eventR in zip(pathL, pathR):
-                    include.robotL_transitions[eventL]._run(robotL)
-                    include.robotR_transitions[eventR]._run(robotR)
-                    # print(robotL.current_state)
-                    # print(robotR.current_state)
-                    print(robotL.current_state,"!!!!!!!!!!!!!!!!!!!!!!")
                     if robotL.current_state.value == "L_cycle1==1":
-                        print("@@@@@@@@@@@@@@@@@@@@@")
+                        print("")
+                        print("")
                         print("L_cycle1 = 1")
                         print(robotL.current_state)
                     if robotL.current_state.value == "(L_cycle2&R_cycle2)==1":
-                        print("@@@@@@@@@@@@@@@@@@@@@")
+                        print("")
+                        print("")
                         print("(L_cycle2&R_cycle2) = 1")
                         print(robotL.current_state)
                     if robotL.current_state.value == "L_cycle2==0":
-                        print("@@@@@@@@@@@@@@@@@@@@@")
+                        print("")
+                        print("")
                         print("L_cycle2 = 0")
                         print(robotL.current_state)
 
+                    if robotL.current_state.value == "Flag_Restart == ON":
+                        print("")
+                        print("")
+                        print("Flag_Restart = 1")
+                        print(robotL.current_state)
 
+                    if robotR.current_state.value == "R_cycle1==1":
+                        print("")
+                        print("")
+                        print("R_cycle1 = 1")
+                        print(robotR.current_state)
+                    if robotR.current_state.value == "(L_cycle2&R_cycle2)==1":
+                        print("")
+                        print("")
+                        print("(R_cycle2&R_cycle2) = 1")
+                        print(robotR.current_state)
+                    if robotR.current_state.value == "R_cycle2==0":
+                        print("")
+                        print("")
+                        print("R_cycle2 = 0")
+                        print(robotR.current_state)
 
-                    # if robotR.current_state.value == "R_cycle1==1":
-                    #     print("#####################")
-                    #     print("R_cycle1 = 1")
-                    #     print(robotR.current_state)
-                    # if robotR.current_state.value == "(L_cycle2&R_cycle2)==1":
-                    #     print("#####################")
-                    #     print("(R_cycle2&R_cycle2) = 1")
-                    #     print(robotR.current_state)
-                    # if robotR.current_state.value == "R_cycle2==0":
-                    #     print("#####################")
-                    #     print("R_cycle2 = 0")
-                    #     print(robotR.current_state)
-                    # if robotR.current_state.value == "R_cycle2==0":
-                    #     print("#####################")
-                    #     print("R_cycle2 = 0")
-                    #     print(robotR.current_state)
+                    if robotR.current_state.value == "Flag_Restart == ON":
+                        print("")
+                        print("")
+                        print("Flag_Restart = 1")
+                        print(robotR.current_state)
 
-
+                    include.robotL_transitions[eventL]._run(robotL)
+                    include.robotR_transitions[eventR]._run(robotR)
 
         if supervisor.current_state.value == "(L_cycle2&R_cycle_2)==0":
             # TODO: automata 3 (for) slave3
@@ -110,4 +117,6 @@ for path in include.main_paths:
             print("czujnik_3=0")
             print(supervisor.current_state)
 
-
+        include.master_transitions[event]._run(supervisor)
+        # print(supervisor.current_state)
+        # print(supervisor.current_state.value)
