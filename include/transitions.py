@@ -45,7 +45,7 @@ robotL_transitions = {}
 for indices in form_to_R1:
     from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
     for to_idx in to_idx_tuple:  # iterate over destinations from a source state
-        op_identifier = "rL_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
+        op_identifier = "L_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
 
         # create transition object and add it to the master_transitions dict
         transition = Transition(st.robotL_states[from_idx], st.robotL_states[to_idx], identifier=op_identifier)
@@ -59,7 +59,7 @@ robotR_transitions = {}
 for indices in form_to_R2:
     from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
     for to_idx in to_idx_tuple:  # iterate over destinations from a source state
-        op_identifier = "rR_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
+        op_identifier = "R_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
 
         # create transition object and add it to the master_transitions dict
         transition = Transition(st.robotR_states[from_idx], st.robotR_states[to_idx], identifier=op_identifier)
