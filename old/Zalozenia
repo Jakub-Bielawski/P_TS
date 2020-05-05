@@ -8,3 +8,8 @@ Można skorzystać z Blender do wizualizacji
 Dobrze było by ogarnąć z prawdziwego procesu
 Funkcja wyświetlająca stan początkowy, końcowy i scieżkę pomiędzy nimi zamiast analizy grafu
 Podzielenie na pliki, zwiększenie czytelności kodu
+
+05.05:
+Strzałki w grafie
+Poprawić czytelność wyświetlania ścieżek
+Wizualizacja: wywołać metodę .animate raz, jako argument podać listę pozycji w ścieżce
