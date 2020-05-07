@@ -26,45 +26,22 @@ form_to_R2 = [
     [3, [0]]
 ]
 
-# create transitions for a master (as a dict)
 master_transitions = {}
-for indices in form_to:
-    from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
-    for to_idx in to_idx_tuple:  # iterate over destinations from a source state
-        op_identifier = "m_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
-
-        # create transition object and add it to the master_transitions dict
-        transition = Transition(st.master_states[from_idx], st.master_states[to_idx], identifier=op_identifier)
-        master_transitions[op_identifier] = transition
-
-        # add transition to source state
-        st.master_states[from_idx].transitions.append(transition)
-
-# create transitions for a robot1 (as a dict)
 robotL_transitions = {}
-for indices in form_to_R1:
-    from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
-    for to_idx in to_idx_tuple:  # iterate over destinations from a source state
-        op_identifier = "L_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
-
-        # create transition object and add it to the master_transitions dict
-        transition = Transition(st.robotL_states[from_idx], st.robotL_states[to_idx], identifier=op_identifier)
-        robotL_transitions[op_identifier] = transition
-
-        # add transition to source state
-        st.robotL_states[from_idx].transitions.append(transition)
-
-# create transitions for a robot2 (as a dict)
 robotR_transitions = {}
-for indices in form_to_R2:
-    from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
-    for to_idx in to_idx_tuple:  # iterate over destinations from a source state
-        op_identifier = "R_{}_{}".format(from_idx, to_idx)  # parametrize identifier of a transition
+def transitionsCreate(name, statesmachine, transitionsMachine, formto):
+    for indices in formto:
+        from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
+        for to_idx in to_idx_tuple:  # iterate over destinations from a source state
+            op_identifier = name.format(from_idx, to_idx)  # parametrize identifier of a transition
 
-        # create transition object and add it to the master_transitions dict
-        transition = Transition(st.robotR_states[from_idx], st.robotR_states[to_idx], identifier=op_identifier)
-        robotR_transitions[op_identifier] = transition
+            # create transition object and add it to the master_transitions dict
+            transition = Transition(statesmachine[from_idx], statesmachine[to_idx], identifier=op_identifier)
+            transitionsMachine[op_identifier] = transition
 
-        # add transition to source state
-        st.robotR_states[from_idx].transitions.append(transition)
+            # add transition to source state
+            statesmachine[from_idx].transitions.append(transition)
 
+transitionsCreate("m_{}_{}", st.master_states, master_transitions, form_to)
+transitionsCreate("L_{}_{}", st.robotL_states, robotL_transitions, form_to_R1)
+transitionsCreate("R_{}_{}", st.robotR_states, robotR_transitions, form_to_R2)
