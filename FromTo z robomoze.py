@@ -1,16 +1,18 @@
 import include
+
 pathFromTo = []
-valueInFrom = "m3"
-valueInTo = "m5"
+valueInFrom = "m2"
+valueInTo = "m1"
 State = valueInFrom
 pathTemp = []
 flagOneMoreTime = False
 flagRobotEnd = False
 if valueInTo[1:] < valueInFrom[1:]:
     flagOneMoreTime = True
-    print(flagOneMoreTime)
+
 for mainIndex in include.master_transitions:
     if flagRobotEnd:
+
         break
     value_tab = mainIndex.split("_")
     State = value_tab[0] + value_tab[1]
@@ -32,30 +34,25 @@ for mainIndex in include.master_transitions:
                 elif valueTabR[1] <= valueInTo[1:]:
                     pathFromTo.append(StateL)
                     pathFromTo.append(StateR)
-                elif StateL == valueInTo or StateR == valueInTo:
+
+                if StateL == valueInTo or StateR == valueInTo:
                     flagRobotEnd = True
                     break
-                # if valueTabL[0] == valueInFrom[:1]:
-                #     if valueTabL[1] >= valueInFrom[1:]:
-                #     # end robots path
-                #     if StateL == valueInTo:
-                #         break
-                # if valueTabR[1] >= valueInFrom[1:]:
-                #
-                #     # end robots path
-                #     if StateR == valueInTo:
-                #         break
+
     # add others state if start value is bigger than end
-    elif flagOneMoreTime:
+    elif flagOneMoreTime and flagRobotEnd:
         pathTemp.append(State)
 pathFromTo = pathFromTo + pathTemp
+print("")
+print("Path from state: ",valueInFrom," to state: ",valueInTo,":")
 print(pathFromTo)
+print("")
 # Change shorcut to Name of State
 for rename in pathFromTo:
-    print(rename)
+    # print(rename)
     if rename[:1] == "m":
-        print(include.master_states[int(rename[1:])].name)
+        print(rename, ": ", include.master_states[int(rename[1:])].name)
     elif rename[:1] == "R":
-        print(include.robotL_states[int(rename[1:])].name)
+        print(rename, ": ", include.robotL_states[int(rename[1:])].name)
     elif rename[:1] == "L":
-        print(include.robotR_states[int(rename[1:])].name)
+        print(rename, ": ", include.robotR_states[int(rename[1:])].name)
