@@ -6,7 +6,7 @@ import include
 # print(robotL.current_state.name)
 
 
-G = nx.petersen_graph()
+G = nx.DiGraph()
 W_cz_w_s_r = "Wjazd czesci w strefe robocza"
 states = {0: "Wjazd czesci w strefe robocza", 1: "Spowolnienie tasmy", 2: "Zatrzymanie tasmy i zamkniecie zatrzaskow",
           3: "Zezwolenie na prace", 4: "Sprawdzenie pozycji robota",
@@ -28,6 +28,6 @@ print("Nodes of graph: ")
 print(H.nodes())
 print("Edges of graph: ")
 print(H.edges())
-nx.draw_shell(H, with_labels=True)
+nx.draw(H, with_labels=True)
 plt.savefig("path_graph_cities.png")
 plt.show()
