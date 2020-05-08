@@ -63,10 +63,11 @@ import include
 
 
 pathFromTo = []
-valueInFrom = "m1"
-valueInTo = "m5"
+valueInFrom = "m2"
+valueInTo = "R2"
 State = valueInFrom
 pathTemp = []
+pathMinus = []
 flagOneMoreTime = False
 flagRobotEnd = False
 
@@ -82,7 +83,8 @@ def printRobot(path):
         StateR = Split(robotR)
         path.append(StateL)
         path.append(StateR)
-
+        if StateL == valueInTo or StateR == valueInTo:
+            break
 
 if valueInFrom[:1] == "m" and valueInTo[:1] == "m":
     for mainIndex in include.master_transitions:
@@ -111,36 +113,28 @@ if valueInFrom[:1] == "m" and valueInTo[:1] == "m":
     print(pathFromTo)
 elif valueInFrom[:1] == "m" and (valueInTo[:1] == "R" or valueInTo[:1] == "L"):
     print(valueInTo)
-
+    flagDone = False
     for mainIndex in include.master_transitions:
-        currentState =Split(mainIndex)
-        # Zaczynamy od dupy strony
-        if valueInFrom[1:] > valueInTo[1:]:
-            # Aktualny stan większy od startowego
-            if currentState[1:] >= valueInFrom[1:]:
-                pathFromTo.append(currentState)
-                if currentState == "m4":
-                    # TODO : tutaj powinna byc obsluga robota, sprawdzanie czy aktualny stan to koncowy
-                    ...
-            # Aktualny stan mniejszy od docelowego
-            elif currentState[1:] <= valueInTo[1:]:
-                pathTemp.append(currentState)
-                if currentState == "m4":
-                    # TODO : tutaj powinna byc obsluga robota, sprawdzanie czy aktualny stan to koncowy
-                    ...
-
-        # Zaczynamu normalnie
-        elif valueInFrom[1:] < valueInTo[1:]:
-            if valueInFrom[1:] <= currentState[1:] <= valueInTo[1:]:
-                pathFromTo.append(currentState)
-                if currentState == "m4":
-                    # TODO : tutaj powinna byc obsluga robota, sprawdzanie czy aktualny stan to koncowy
-                    ...
-
-
-    pathFromTo = pathFromTo + pathTemp
-
-
+        currentState = Split(mainIndex)
+        if currentState[1:] >= valueInFrom[1:]:
+            pathFromTo.append(currentState)
+            if currentState == "m4":
+                printRobot(pathFromTo)
+                flagDone = True
+        if currentState[1:] < valueInFrom[1:]:
+            pathTemp.append(currentState)
+            if currentState == "m4":
+                printRobot(pathTemp)
+        # remove value if we have valueInTo
+        if flagDone:
+            pathFromTo.remove(currentState)
+    print(pathTemp)
+    print(pathFromTo)
+    if valueInFrom < "m4":
+        pathFromTo
+    else:
+        pathFromTo = pathFromTo + pathTemp
+    print(pathFromTo)
 
 elif (valueInFrom[:1] == "R" or valueInFrom[:1] == "L") and valueInTo[:1] == "m":
     print(valueInTo, "!!!")
