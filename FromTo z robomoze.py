@@ -174,3 +174,11 @@ elif (valueInFrom[:1] == "R" or valueInFrom[:1] == "L") and (valueInTo[:1] == "R
     printRobot(pathFromTo)
     print(pathFromTo)
 
+for rename in pathFromTo:
+    # print(rename)
+    if rename[:1] == "m":
+        print(rename, ": ", include.master_states[int(rename[1:])].name)
+    elif rename[:1] == "R":
+        print(rename, ": ", include.robotL_states[int(rename[1:])].name)
+    elif rename[:1] == "L":
+        print(rename, ": ", include.robotR_states[int(rename[1:])].name)
