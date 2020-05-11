@@ -63,8 +63,8 @@ import include
 
 
 pathFromTo = []
-valueInFrom = "m2"
-valueInTo = "R2"
+valueInFrom = "R1"
+valueInTo = "m3"
 State = valueInFrom
 pathTemp = []
 pathMinus = []
@@ -78,13 +78,26 @@ def Split(Index):
 
 
 def printRobot(path):
+    flagFirstLoop = False
     for robotL, robotR in zip(include.robotL_transitions, include.robotR_transitions):
         StateL = Split(robotL)
         StateR = Split(robotR)
-        path.append(StateL)
-        path.append(StateR)
-        if StateL == valueInTo or StateR == valueInTo:
-            break
+        # path for r to m
+        if valueInFrom[:1] == "R" or valueInFrom[:1] == "L":
+            if (StateL[1:] > valueInFrom[1:] and StateL[:1] == valueInFrom[:1]) or (StateL[1:] > valueInFrom[1:] and flagFirstLoop):
+                path.append(StateL)
+                path.append(StateR)
+                flagFirstLoop = True
+            elif StateR[1:] > valueInFrom[1:] and StateR[:1] == valueInFrom[:1]:
+                path.append(StateR)
+            if StateL[1:] == valueInTo[1:] and StateL[:1] == valueInTo[:1] or StateR[1:] == valueInTo[1:] and StateR[:1] == valueInTo[:1]:
+                break
+        else:
+            # path for m to m and m to r
+            path.append(StateL)
+            path.append(StateR)
+            if StateL == valueInTo or StateR == valueInTo:
+                break
 
 if valueInFrom[:1] == "m" and valueInTo[:1] == "m":
     for mainIndex in include.master_transitions:
@@ -138,8 +151,26 @@ elif valueInFrom[:1] == "m" and (valueInTo[:1] == "R" or valueInTo[:1] == "L"):
 
 elif (valueInFrom[:1] == "R" or valueInFrom[:1] == "L") and valueInTo[:1] == "m":
     print(valueInTo, "!!!")
-    ...
+    printRobot(pathFromTo)
+    print(pathFromTo)
+    flagEnd = False
+    for mainIndex in include.master_transitions:
+        currentState = Split(mainIndex)
+        if currentState[1:] > "4" and currentState[1:] <= valueInTo[1:]:
+            pathFromTo.append(currentState)
+            print(currentState)
+            if valueInTo == currentState:
+                flagEnd = True
+        elif currentState[1:] > "4" and currentState[1:] > valueInTo[1:] and flagEnd != True:
+            pathFromTo.append(currentState)
+        if currentState[1:] <= valueInTo[1:]:
+            pathTemp.append(currentState)
+    if valueInTo[1:] <= "4":
+        pathFromTo = pathFromTo + pathTemp
+    print(pathFromTo)
 
 elif (valueInFrom[:1] == "R" or valueInFrom[:1] == "L") and (valueInTo[:1] == "R" or valueInTo[:1] == "L"):
     print(valueInTo, "@@@@@")
-    ...
+    printRobot(pathFromTo)
+    print(pathFromTo)
+
