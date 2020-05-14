@@ -1,5 +1,0 @@
-1. Założenie konta na GitHubie
-2. Zamodelowanie pracoseu w bibliotece SymPy/Python State Machine                   -- akutalnie jesteśmy tutaj ( w sensie trzeba to zrobić )
-3. Wizualizacja autoamtu w bibliotece Networkx
-4. Analiza grafu w celu identyfikacji "livelock" "deadlock" i osiągalności stanów
-5. Robopy wizualizacja procesu
