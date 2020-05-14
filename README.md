@@ -5,6 +5,7 @@ Use python3.7
 
 Run
 -
+- pip3.7 install numpy
 - pip3.7 install robopy
 - pip3.7 install vtk
 - pip3.7 install networkx
