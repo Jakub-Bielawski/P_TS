@@ -1,11 +1,22 @@
-# P_TS
+# Projekt_TSwR
 Projekt na zajęcia z Teori Sterowania
 
-Link do pomysłu na graf -K.B
-https://drive.google.com/file/d/1mGlDmhS90HqG40i_mlqXBqsS5rVYmeJS/view?usp=sharing
-Link do pomysłu na graf -J.M
-https://drive.google.com/open?id=1xVGA1aQV9KVh3oVF95ldx8YSVfBG93Iy
-Link do pomysłu na graf -B.M
-https://drive.google.com/open?id=1emn7DUI8wQFjsnR2K1yUOoUSg83rnV-H
+Use python3.7
 
-Graf na podstawie listy kroków: https://drive.google.com/open?id=1JxOJT4elXsBo_soPEVQ-5WlYMR6P-TRC
+Run
+-
+- pip3.7 install robopy
+- pip3.7 install vtk
+- pip3.7 install networkx
+- pip3.7 install statemachine
+- pip3.7 install matplotlib
+ 
+Example
+-
+Example:
+
+$ python3.7 main.py puma
+ 
+ Problems:
+ -
+ If you have PILOW installed, you will probably need to remove this package

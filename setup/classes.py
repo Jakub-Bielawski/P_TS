@@ -1,4 +1,6 @@
 from statemachine import StateMachine
+
+
 # create a generator class
 
 class Generator(StateMachine):

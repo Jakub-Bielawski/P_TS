@@ -1,15 +1,50 @@
-import include
+import setup
+
+
+def sequenceL1():
+    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
+                      [90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
+                      [90.0, 90.0, 30.0, 0.0, 0.0, 0.0]]
+    return configurations
+
+
+def sequenceL2():
+    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
+                      [-90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
+                      [-90.0, 0.0, 30.0, 90.0, 0.0, 0.0]]
+    return configurations
+
+
+def sequenceR1():
+    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
+                      [90.0, 45.0, 0.0, 34.0, 20.0, 90.0],
+                      [90.0, 70.0, 30.0, 0.0, -60.0, 0.0]]
+    return configurations
+
+
+def sequence2():
+    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
+                      [-90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
+                      [-90.0, 0.0, 30.0, 90.0, 0.0, 0.0]]
+    return configurations
+
 
 def StateMachineStart():
+    """""
+    Executing the statemachine and create 
+    
+    :return  List of positions for each robot 
+    """""
     robotLHome = [0.0, 90.0, 0.0, 0.0, 0.0, 0.0]
-    robotRHome = [0.0, 90.0, 0.0, 0.0, 0.0, 0.0]
+    robotRHome = [0.0, -90.0, 0.0, 0.0, 0.0, 0.0]
     robotLMoves = [robotLHome]
     robotRMoves = [robotRHome]
-    for path in include.main_paths:
+    for path in setup.main_paths:
         # create a supervisor
-        supervisor = include.Generator.create_master(include.master_states, include.master_transitions)
-        robotL = include.Generator.create_master(include.robotL_states, include.robotL_transitions)
-        robotR = include.Generator.create_master(include.robotR_states, include.robotR_transitions)
+        supervisor = setup.Generator.create_master(setup.master_states, setup.master_transitions)
+        # create robots
+        robotL = setup.Generator.create_master(setup.robotL_states, setup.robotL_transitions)
+        robotR = setup.Generator.create_master(setup.robotR_states, setup.robotR_transitions)
         print('\n' + str(supervisor))
         print('\n' + str(robotL))
         print('\n' + str(robotR))
@@ -23,85 +58,76 @@ def StateMachineStart():
                 print(supervisor.current_state)
 
             if supervisor.current_state.value == "czujnik_1==1":
-
                 print(supervisor.current_state)
 
             if supervisor.current_state.value == "czujnik_2==1":
-
                 print(supervisor.current_state)
-            if supervisor.current_state.value == "czujnik_3==1":
-                # TODO: automata 3 (for) slave3
 
+            if supervisor.current_state.value == "czujnik_3==1":
                 print(supervisor.current_state)
 
             if supervisor.current_state.value == "S1&S2==ON":
-                # TODO: automata 3 (for) slave3
-
                 print(supervisor.current_state)
-                # supervisor.current_state.value="dupa"
-                # print(supervisor.current_state.value)
 
-                for pathL, pathR in zip(include.rL_paths, include.rR_paths):
+                for pathL, pathR in zip(setup.rL_paths, setup.rR_paths):
                     for eventL, eventR in zip(pathL, pathR):
-                        if robotL.current_state.value == "L_cycle1==1":
 
+                        ##############################################
+                        #########         ROBOT L      ###############
+                        ##############################################
+                        if robotL.current_state.value == "L_cycle1==1":
                             print(robotL.current_state)
-                            # positions to reach defined as list odf joint states
-                            moves = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
-                                     [90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
-                                     [90.0, 90.0, 30.0, 0.0, 0.0, 0.0]]
-                            for move in moves:
-                                robotLMoves.append(move)
+                            # create list of positions
+                            for configuration in sequenceL1():
+                                robotLMoves.append(configuration)
 
                         if robotL.current_state.value == "(L_cycle2&R_cycle2)==1":
-                            # TODO: druga sekwencja dla robota
-
                             print(robotL.current_state)
-                        if robotL.current_state.value == "L_cycle2==0":
-                            # TODO: druga sekwencja dla robota
+                            # create list of positions
+                            for configuration in sequenceL2():
+                                robotLMoves.append(configuration)
 
+                        if robotL.current_state.value == "L_cycle2==0":  # GO HOME
                             print(robotL.current_state)
+                            robotLMoves.append(robotLHome)
 
                         if robotL.current_state.value == "Flag_Restart == ON":
-                            # TODO: druga sekwencja dla robota
-
+                            # TODO: Reset robot lewy
                             print(robotL.current_state)
-                        # TODO: dodać pozycje drugiego robota
-                        # if robotR.current_state.value == "R_cycle1==1":
-                        #     # print("")
-                        #     # print("")
-                        #     # print("R_cycle1 = 1")
-                        #     print(robotR.current_state)
-                        # if robotR.current_state.value == "(L_cycle2&R_cycle2)==1":
-                        #     # print("")
-                        #     # print("")
-                        #     # print("(R_cycle2&R_cycle2) = 1")
-                        #     print(robotR.current_state)
-                        # if robotR.current_state.value == "R_cycle2==0":
-                        #     # print("")
-                        #     # print("")
-                        #     # print("R_cycle2 = 0")
-                        #     print(robotR.current_state)
-                        #
-                        # if robotR.current_state.value == "Flag_Restart == ON":
-                        #     # print("")
-                        #     # print("")
-                        #     # print("Flag_Restart = 1")
-                        #     print(robotR.current_state)
 
-                        include.robotL_transitions[eventL]._run(robotL)
-                        include.robotR_transitions[eventR]._run(robotR)
-                robotLMoves.append(robotLHome)
+
+                        ##############################################
+                        #########         ROBOT R      ###############
+                        ##############################################
+                        if robotR.current_state.value == "R_cycle1==1":
+                            print(robotR.current_state)
+                            # create list of positions
+                            for configuration in sequenceR1():
+                                robotRMoves.append(configuration)
+
+                        if robotR.current_state.value == "(L_cycle2&R_cycle2)==1":
+                            print(robotR.current_state)
+                            # create list of positions
+                            for configuration in sequenceR1():
+                                robotRMoves.append(configuration)
+
+                        if robotR.current_state.value == "R_cycle2==0":
+                            print(robotR.current_state)
+                            robotRMoves.append(robotRHome)
+
+                        if robotR.current_state.value == "Flag_Restart == ON":
+                            print(robotR.current_state)
+                            # TODO: Reset robot prawy
+
+                        setup.robotL_transitions[eventL]._run(robotL)
+                        setup.robotR_transitions[eventR]._run(robotR)
+
             if supervisor.current_state.value == "(L_cycle2&R_cycle_2)==0":
-                # TODO: automata 3 (for) slave3
-
                 print(supervisor.current_state)
 
             if supervisor.current_state.value == "czujnik_3==0":
-                # TODO: automata 3 (for) slave3
-
                 print(supervisor.current_state)
 
-            include.master_transitions[event]._run(supervisor)
+            setup.master_transitions[event]._run(supervisor)
 
     return robotLMoves, robotRMoves

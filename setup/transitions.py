@@ -1,6 +1,6 @@
 from statemachine import Transition
 
-import include.states as st
+import setup.states as st
 
 # valid transitions for a master (indices of states from-to)
 form_to = [
