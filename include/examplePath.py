@@ -6,7 +6,7 @@ path_Lp3 = ["L_0_1", "L_1_2", "L_2_3", "L_3_0"]
 path_Rp1 = ["R_0_1", "R_1_2", "R_2_0"]
 path_Rp2 = ["R_0_1", "R_1_3", "R_3_0"]
 path_Rp3 = ["R_0_1", "R_1_2", "R_2_3", "R_3_0"]
-
+# TODO: wybrać jedną podstawowoa ściezke do testow
 main_paths = [path_main1, path_main2]
-rL_paths = [path_Lp1,path_Lp2,path_Lp3]
-rR_paths = [path_Rp1,path_Rp2,path_Rp3]
+rL_paths = [path_Lp1, path_Lp2, path_Lp3]
+rR_paths = [path_Rp1, path_Rp2, path_Rp3]

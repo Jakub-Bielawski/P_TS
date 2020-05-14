@@ -31,6 +31,7 @@ def main():
     # linear_move_02.run(model)
     # playground.run(model)
 
+    #TODO: drugi robot
 
 # run main
 if __name__ == '__main__':

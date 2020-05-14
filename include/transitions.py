@@ -29,6 +29,8 @@ form_to_R2 = [
 master_transitions = {}
 robotL_transitions = {}
 robotR_transitions = {}
+
+
 def transitionsCreate(name, statesmachine, transitionsMachine, formto):
     for indices in formto:
         from_idx, to_idx_tuple = indices  # unpack list of two elements into separate from_idx and to_idx_tuple
@@ -41,6 +43,7 @@ def transitionsCreate(name, statesmachine, transitionsMachine, formto):
 
             # add transition to source state
             statesmachine[from_idx].transitions.append(transition)
+
 
 transitionsCreate("m_{}_{}", st.master_states, master_transitions, form_to)
 transitionsCreate("L_{}_{}", st.robotL_states, robotL_transitions, form_to_R1)
