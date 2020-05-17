@@ -69,6 +69,8 @@ def showPath(valueInFrom, valueInTo):
                     break
 
     if valueInFrom[:1] == "m" and valueInTo[:1] == "m":
+        flagRobotDone = False
+        removestate = "m4"
         for mainIndex in setup.master_transitions:
             currentState = Split(mainIndex)
             # Zaczynamy od dupy strony
@@ -76,19 +78,28 @@ def showPath(valueInFrom, valueInTo):
                 # Aktualny stan większy od startowego
                 if currentState[1:] >= valueInFrom[1:]:
                     pathFromTo.append(currentState)
-                    if currentState == "m4":
+                    if currentState == "m4" and not flagRobotDone:
                         printRobot(pathFromTo)
+                        flagRobotDone = True
+                    elif flagRobotDone and currentState == "m4":
+                        pathFromTo.pop(len(pathFromTo)-1)
+
+
                 # Aktualny stan mniejszy od docelowego
                 elif currentState[1:] <= valueInTo[1:]:
                     pathTemp.append(currentState)
-                    if currentState == "m4":
+                    if currentState == "m4" and not flagRobotDone:
                         printRobot(pathTemp)
+                        flagRobotDone = True
             # Zaczynamu normalnie
             elif valueInFrom[1:] < valueInTo[1:]:
                 if valueInFrom[1:] <= currentState[1:] <= valueInTo[1:]:
                     pathFromTo.append(currentState)
-                    if currentState == "m4":
+                    if currentState == "m4" and not flagRobotDone:
                         printRobot(pathFromTo)
+                        flagRobotDone = True
+                    elif flagRobotDone and currentState == "m4":
+                        pathFromTo.pop(len(pathFromTo)-1)
 
         pathFromTo = pathFromTo + pathTemp
 
@@ -158,4 +169,4 @@ def showPath(valueInFrom, valueInTo):
             print(rename, ": ", setup.robotR_states[int(rename[1:])].name)
 
 
-showPath("L3", "L2")
+showPath("m1", "R3")
