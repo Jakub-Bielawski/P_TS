@@ -36,7 +36,10 @@ def main():
 
 
     # execute statemachine to get the path for robots
-    statesL,statesR = StateMachineStart()
+    statesL, statesR = StateMachineStart()
+    print(statesL)
+    print("SSSSSS")
+    #print(statesR)
     # load model
     if str(args.model).lower() == "puma":
         model = robot.Puma560()
@@ -48,11 +51,10 @@ def main():
 
     # start exercises - uncomment one
     # load_robot_and_display_00.run(model)
-    joint_move_01.run(model,statesR)
-    # linear_move_02.run(model)
-    # playground.run(model)
-
-    #TODO: drugi robot
+    joint_move_01.run(model, statesR)
+    joint_move_01.run(model, statesL)
+    #linear_move_02.run(model)
+    #playground.run(model)
 
 # run main
 if __name__ == '__main__':

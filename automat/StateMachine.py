@@ -2,30 +2,32 @@ import setup
 
 
 def sequenceL1():
-    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
-                      [90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
-                      [90.0, 90.0, 30.0, 0.0, 0.0, 0.0]]
+    configurations = [
+                      [90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
+                      [120.0, 120.0, 0.0, 0.0, 0.0, 0.0],
+                      [120.0, 120.0, 30.0, 0.0, -60.0, 0.0]]
     return configurations
 
 
 def sequenceL2():
-    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
-                      [-90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
-                      [-90.0, 0.0, 30.0, 90.0, 0.0, 0.0]]
+    configurations = [[90.0, 120.0, 30.0, 0.0, -60.0, 0.0],
+                      [90.0, 110.0, 10.0, 0.0, -30.0, 0.0],
+                      [60.0, 110.0, 10.0, 0.0, -30.0, 0.0]]
     return configurations
 
 
 def sequenceR1():
-    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
-                      [90.0, 45.0, 0.0, 34.0, 20.0, 90.0],
-                      [90.0, 70.0, 30.0, 0.0, -60.0, 0.0]]
+    configurations = [
+                      [-90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
+                      [-120.0, 120.0, 0.0, 0.0, 0.0, 0.0],
+                      [-120.0, 120.0, 30.0, 0.0, -60.0, 0.0]]
     return configurations
 
 
-def sequence2():
-    configurations = [[90.0, 90.0, 0.0, 0.0, 0.0, 0.0],
-                      [-90.0, 90.0, 0.0, 0.0, 0.0, 90.0],
-                      [-90.0, 0.0, 30.0, 90.0, 0.0, 0.0]]
+def sequenceR2():
+    configurations = [[-90.0, 120.0, 30.0, 0.0, -60.0, 0.0],
+                      [-90.0, 110.0, 10.0, 0.0, -30.0, 0.0],
+                      [-60.0, 110.0, 10.0, 0.0, -30.0, 0.0]]
     return configurations
 
 
@@ -35,8 +37,8 @@ def StateMachineStart():
     
     :return  List of positions for each robot 
     """""
-    robotLHome = [0.0, 90.0, 0.0, 0.0, 0.0, 0.0]
-    robotRHome = [0.0, -90.0, 0.0, 0.0, 0.0, 0.0]
+    robotLHome = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    robotRHome = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     robotLMoves = [robotLHome]
     robotRMoves = [robotRHome]
     for path in setup.main_paths:
@@ -72,6 +74,7 @@ def StateMachineStart():
                 for pathL, pathR in zip(setup.rL_paths, setup.rR_paths):
                     for eventL, eventR in zip(pathL, pathR):
 
+
                         ##############################################
                         #########         ROBOT L      ###############
                         ##############################################
@@ -92,7 +95,7 @@ def StateMachineStart():
                             robotLMoves.append(robotLHome)
 
                         if robotL.current_state.value == "Flag_Restart == ON":
-                            # TODO: Reset robot lewy
+                            robotLMoves.append(robotLHome)
                             print(robotL.current_state)
 
 
@@ -108,7 +111,7 @@ def StateMachineStart():
                         if robotR.current_state.value == "(L_cycle2&R_cycle2)==1":
                             print(robotR.current_state)
                             # create list of positions
-                            for configuration in sequenceR1():
+                            for configuration in sequenceR2():
                                 robotRMoves.append(configuration)
 
                         if robotR.current_state.value == "R_cycle2==0":
@@ -117,7 +120,7 @@ def StateMachineStart():
 
                         if robotR.current_state.value == "Flag_Restart == ON":
                             print(robotR.current_state)
-                            # TODO: Reset robot prawy
+                            robotRMoves.append(robotRHome)
 
                         setup.robotL_transitions[eventL]._run(robotL)
                         setup.robotR_transitions[eventR]._run(robotR)
