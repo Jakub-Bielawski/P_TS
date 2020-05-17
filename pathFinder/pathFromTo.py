@@ -2,11 +2,6 @@ import setup
 
 # TODO: tego nie sprzątam na razie
 def showPath(valueInFrom, valueInTo):
-    # TODO : Poprawić roboty R3/L3, przy R/L i m___ Done
-    # TODO : robot -> robot  R/L -> R/L __ brakuje podwujnego obiegu
-    # TODO: problem z m2->R3 dwa razy drukuje roboty___ Done
-    # valueInFrom = "m2"
-    # valueInTo = "R3"
     pathTemp = []
     pathFromTo = []
 
@@ -42,21 +37,26 @@ def showPath(valueInFrom, valueInTo):
                     if StateL[:1] == "L" and StateL == valueInTo:
                         path.append(StateL)
                     else:
-                        path.append(StateL)
-                        path.append(StateR)
+                        if valueInFrom == StateR:
+                            path.append(StateR)
+                        else:
+                            path.append(StateL)
+                            path.append(StateR)
                     if StateL == valueInTo or StateR == valueInTo:
                         break
-                # elif valueInFrom[1:] > valueInTo[1:]:
-                #     if StateL[1:] >= valueInTo[1:] or StateR[1:] >= valueInTo[1:]:
-                #         if StateL[:1] == "L" and StateL == valueInTo:
-                #             path.append(StateL)
-                #         else:
-                #             path.append(StateL)
-                #             path.append(StateR)
-                #     else:
-                #         pathTemp.append(StateL)
-                #         pathTemp.append(StateR)
-                # path = path + pathTemp
+                elif valueInFrom[1:] > valueInTo[1:]:
+                    if StateL[1:] > valueInTo[1:] or StateR[1:] > valueInTo[1:]:
+                        if StateR[:1] == "R" and StateR == valueInFrom:
+                            path.append(StateR)
+                        else:
+                            path.append(StateL)
+                            path.append(StateR)
+                    else:
+                        pathTemp.append(StateL)
+                        pathTemp.append(StateR)
+                        if StateR[1:] == valueInTo[1:] and valueInTo[:1] == "L":
+                            pathTemp.remove(StateR)
+
 
             # path for m to m and m to r
             else:
@@ -122,9 +122,7 @@ def showPath(valueInFrom, valueInTo):
         print(pathFromTo)
 
     elif (valueInFrom[:1] == "R" or valueInFrom[:1] == "L") and valueInTo[:1] == "m":
-        print(valueInTo, "!!!")
         printRobot(pathFromTo)
-        print(pathFromTo)
         flagEnd = False
         for mainIndex in setup.master_transitions:
             currentState = Split(mainIndex)
@@ -145,9 +143,8 @@ def showPath(valueInFrom, valueInTo):
         print(pathFromTo)
 
     elif (valueInFrom[:1] == "R" or valueInFrom[:1] == "L") and (valueInTo[:1] == "R" or valueInTo[:1] == "L"):
-        print(valueInTo, "@@@@@")
         printRobot(pathFromTo)
-
+        pathFromTo = pathFromTo + pathTemp
         print(pathTemp)
         print(pathFromTo)
 
@@ -161,4 +158,4 @@ def showPath(valueInFrom, valueInTo):
             print(rename, ": ", setup.robotR_states[int(rename[1:])].name)
 
 
-showPath("L1", "L3")
+showPath("L3", "L2")
