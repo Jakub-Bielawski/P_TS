@@ -37,9 +37,6 @@ def main():
 
     # execute statemachine to get the path for robots
     statesL, statesR = StateMachineStart()
-    print(statesL)
-    print("SSSSSS")
-    #print(statesR)
     # load model
     if str(args.model).lower() == "puma":
         model = robot.Puma560()
