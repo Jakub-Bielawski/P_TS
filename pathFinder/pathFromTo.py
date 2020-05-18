@@ -174,5 +174,5 @@ def showPath(valueInFrom, valueInTo):
         elif rename[:1] == "L":
             print(rename, ": ", setup.robotR_states[int(rename[1:])].name)
 
-
+# example of use
 showPath("m1", "m6")
