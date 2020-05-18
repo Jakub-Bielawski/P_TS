@@ -6,24 +6,16 @@ from commands.moves import move_j
 
 
 def run(robot, pathToExecute):
-    # create configurations from path
-
-    # define joint positions
-    start = [0.0, 90.0, 0.0, 0.0, 0.0, 0.0]
-    middle = [90.0, 90.0, 0.0, 0.0, 0.0, 0.0]
-    stop = [90.0, 90.0, 30.0, 0.0, 0.0, 0.0]
 
     # compute path
-    # path1 = move_j(robot, start, middle)
-    # path2 = move_j(robot, middle, stop)
-    wszystkie_pathy=[]
+    all_points=[]
     for idx, config in enumerate(pathToExecute):
         if idx <= (len(pathToExecute) - 2):
             Path = move_j(robot, config, pathToExecute[idx + 1])
-            wszystkie_pathy.append(Path)
+            all_points.append(Path)
     # concatenate entire path
 
-    path = np.concatenate(tuple(wszystkie_pathy), axis=0)
+    path = np.concatenate(tuple(all_points), axis=0)
     print(path)
 
     # animate robot

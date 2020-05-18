@@ -26,5 +26,5 @@ def genereateGraph():
     print("Edges of graph: ")
     print(H.edges())
     nx.draw(H, with_labels=True)
-    plt.savefig("path_graph_cities.png")
+    plt.savefig("path_graph.png")
     plt.show()

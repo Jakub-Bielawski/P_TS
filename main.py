@@ -34,9 +34,9 @@ def main():
     # generate graph
     # genereateGraph()
 
-
     # execute statemachine to get the path for robots
     statesL, statesR = StateMachineStart()
+
     # load model
     if str(args.model).lower() == "puma":
         model = robot.Puma560()
@@ -46,12 +46,10 @@ def main():
         print("Bad model specified. Try again.")
         sys.exit()
 
-    # start exercises - uncomment one
-    # load_robot_and_display_00.run(model)
-    joint_move_01.run(model, statesR)
-    joint_move_01.run(model, statesL)
-    #linear_move_02.run(model)
-    #playground.run(model)
+    # Start robot simulations
+    joint_move.run(model, statesR)
+    joint_move.run(model, statesL)
+
 
 # run main
 if __name__ == '__main__':
