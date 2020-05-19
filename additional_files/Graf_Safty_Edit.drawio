@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-04-27T16:06:53.223Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36" etag="D7OX-aOrDRsTfdqVpPRM" version="12.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-19T10:04:28.886Z" agent="5.0 (X11)" etag="-Vya4yCS93OvFR_yYadk" version="13.0.4" type="github">
   <diagram name="Page-1" id="42789a77-a242-8287-6e28-9cd8cfd52e62">
-    <mxGraphModel dx="211" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1176" dy="1160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -175,34 +175,6 @@
           <mxGeometry x="-0.3623" y="-1" relative="1" as="geometry">
             <mxPoint x="1" as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-22" value="&lt;span&gt;Praca układu&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1353.75" y="770" width="92.5" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-23" value="Zatrzymanie lini oraz robotów" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1345" y="910" width="110" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-24" value="" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-22" target="FYHUPgaPEH7CVNJRQOQ_-23" edge="1">
-          <mxGeometry x="0.0002" relative="1" as="geometry">
-            <mxPoint x="1533.75" y="850" as="sourcePoint" />
-            <mxPoint x="1736.25" y="930" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-9G8Z5qm2i0IHwVYOWqM-1" value="Naruszenie safty" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="FYHUPgaPEH7CVNJRQOQ_-24" connectable="0" vertex="1">
-          <mxGeometry x="-0.2889" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-25" value="Zamknięcie obwodu safty" style="edgeStyle=none;rounded=1;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeColor=#B3B3B3;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="FYHUPgaPEH7CVNJRQOQ_-23" target="FYHUPgaPEH7CVNJRQOQ_-28" edge="1">
-          <mxGeometry x="0.0002" relative="1" as="geometry">
-            <mxPoint x="1463.75" y="960" as="sourcePoint" />
-            <mxPoint x="1400" y="1075" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="FYHUPgaPEH7CVNJRQOQ_-28" value="&lt;span&gt;Powrót do wykonywanej sekwencji&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1353.75" y="1060" width="92.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FYHUPgaPEH7CVNJRQOQ_-36" value="Przygotowanie&amp;nbsp;&lt;br&gt;do ponownego wykonania" style="ellipse;whiteSpace=wrap;html=1;rounded=0;shadow=1;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="940" y="250" width="110" height="60" as="geometry" />
